@@ -1,2 +1,26 @@
 # PyTroch Muon with Polar Express Method and 8-bit Quantization
 This code is based on the Muon optimizer of PyTorch 2.11 (BSD-3-Clause License), with additional support for the [Polar Express method](https://arxiv.org/abs/2505.16932) and [8-bit quantization](https://arxiv.org/abs/2509.23106).
+
+```python
+from _muon import Muon
+
+optimizer = Muon(
+    model.parameters(), 
+    lr=1e-3, 
+    weight_decay=0.1,
+    momentum=0.95,
+    nesterov=True,
+    polar_express=True,
+    pe_l=0.001,
+    pe_u=1.0,
+    pe_steps=6,
+    quant=True       
+)
+
+# 训练循环
+optimizer.zero_grad()
+loss = criterion(model(input), target)
+loss.backward()
+optimizer.step()
+
+```
