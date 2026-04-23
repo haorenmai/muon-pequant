@@ -2,7 +2,7 @@
 This code is based on the Muon optimizer of PyTorch 2.11 (BSD-3-Clause License), with additional support for the [Polar Express method](https://arxiv.org/abs/2505.16932) and [8-bit quantization](https://arxiv.org/abs/2509.23106).
 
 ```python
-from _muon import Muon
+from _muon_polarquant import Muon
 
 optimizer = Muon(
     model.parameters(), 
