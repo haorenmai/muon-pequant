@@ -5,7 +5,7 @@ This code is based on the Muon optimizer of PyTorch 2.11 (BSD-3-Clause License),
 from _muon_polarquant import Muon
 
 optimizer = Muon(
-    model.parameters(), 
+    params, 
     lr=1e-3, 
     weight_decay=0.1,
     momentum=0.95,
