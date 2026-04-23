@@ -17,10 +17,4 @@ optimizer = Muon(
     quant=True       
 )
 
-# 训练循环
-optimizer.zero_grad()
-loss = criterion(model(input), target)
-loss.backward()
-optimizer.step()
-
 ```
